@@ -16,7 +16,7 @@ const BlogDetail = () => {
     const getBlog = async () => {
       try {
         const token = localStorage.getItem('token');
-        const blogData = await fetchBlogById(id,token); // Pass the token to the API function
+        const blogData = await fetchBlogById(id,token?token:"default"); // Pass the token to the API function
         setBlog(blogData);
         console.log(blogData);
         // Assuming the backend returns 'isAuthor' flag
